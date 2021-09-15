@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Art Board</title>
+</head>
+
+<body>
+    <div class="control-panel">
+        <div class="controls">
+            <div class="toggle-brush-eraser" onclick="toggleBrush()">
+                <i class="fas fa-pencil-alt" id="toggle"></i>
+                <i class="fas fa-eraser" id="reference"></i>
+            </div>
+
+            <input type="color" id="color" onchange="changeBrushColor(this.value)">
+            <input type="range" min="1" value="3" max="16" step="1" id="brush-slider"
+                oninput="changeBrushSize(this.value)">
+            <p id="brush-size-display"><span id="brush-size-value">3</span><span> px</span></p>
+        </div>
+
+        <div class="controls">
+            <button class="btn clear" onclick="clearArt()"><kbd class="key">C</kbd> Clear</button>
+            <button class="btn save" onclick="saveArt()"><kbd class="key">S</kbd> Save</button>
+        </div>
+    </div>
+
+
+    <div class="art-board">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
