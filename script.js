@@ -105,8 +105,10 @@ function clearArt() {
 
 //keyboard shotcuts
 window.addEventListener("keypress", (event) => {
-  if (event.key.toLowerCase() === "c") clearArt();
-  if (event.key.toLowerCase() === "s") saveArt();
+  let key = event.key.toLowerCase();
+  if (key === "c") clearArt();
+  if (key === "s") saveArt();
+  if (key === "b") toggleBrush();
   if (!isNaN(event.key)) {
     if (event.key < 1) return;
     brush.size = event.key;
